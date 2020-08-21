@@ -1,16 +1,11 @@
 package org.travelMVP.demo.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HelloController {
-
-//    @RequestMapping(value= "")
-//    @ResponseBody //just to return plaintext
-//    public String index(){
-//        return "Hello, World!";
-//    }
 
     @RequestMapping(value= "goodbye")
     @ResponseBody //just to return plaintext
@@ -18,13 +13,12 @@ public class HelloController {
         return "Goodbye";
     }
 
-    //create handler for requests of the form /hello?name=LaunchCode
-//    @GetMapping("hello")
-//    @PostMapping("hello")
+
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "hello")
-    @ResponseBody
-    public String helloWithQueryParam(@RequestParam String name){
-        return "Hello, " + name + "!";
+    public String helloWithQueryParam(@RequestParam String name, Model model){
+        String greeting = "Hello, " + name + "!";
+        model.addAttribute("greeting", greeting);
+        return "hello";
     }
 
     //handles request of the form /hello/User
