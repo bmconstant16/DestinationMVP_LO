@@ -23,4 +23,10 @@ public class TripController {
         model.addAttribute("trips", trips);
         return "trips/index";
     }
+
+    //routes to trips/create
+    @GetMapping("create")
+    public String renderCreateEventForm(){
+        return "trips/create";
+    }
 }
