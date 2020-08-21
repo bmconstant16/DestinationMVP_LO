@@ -32,7 +32,7 @@ public class TripController {
 
     //get mapping handles routes to trips/create
     @GetMapping("create")
-    //TODO: refactor so it takes string name and a date
+    //TODO: refactor so it takes string name and a date- is there a type for this?
     public String renderCreateEventForm(){
         return "trips/create";
     }

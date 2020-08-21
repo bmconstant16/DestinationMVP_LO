@@ -13,5 +13,28 @@
 
 <body>
 
+<h1 th:fragment = "mainTitle">Destination Unknown: A Travel Planning Tool</h1>
+
+<nav th:fragment="navigation">
+    <ul>
+        <li><a href="/trips">My Trips</a></li>
+        <li><a href="/trips/create">Create new trip</a></li>
+    </ul>
+</nav>
+
+<nav th:fragment="login">
+    <ul>
+        <li><a href>Login</a></li>
+        <li><a href>Sign up</a></li>
+    </ul>
+</nav>
+
+
+<nav th:fragment="footer">
+    <p>Made by BC</p>
+</nav>
+
 </body>
+
+
 </html>

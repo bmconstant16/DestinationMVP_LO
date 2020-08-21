@@ -5,15 +5,23 @@
     <title>All Trips</title>
 </head>
 <body>
-<h1>All Trips</h1>
 
+<h1 th:replace="fragments :: mainTitle"></h1>
+
+<h2>All Trips</h2>
 <p>Each trip will be hyperlinked and taken to an itinerary page. the path will be like trips/italy</p>
 <p th:unless="${trips} and ${trips.size()}">You haven't yet entered any trips!</p>
-<p><a href="/trips/create">Create new trip here</a></p>
+
+
+
+
 <ul>
     <th:block th:each="trip : ${trips}">
         <li th:text="${trip}"></li>
     </th:block>
 </ul>
+
+<p><a href="/trips/create">Create new trip here</a></p>
+
 </body>
 </html>
