@@ -7,12 +7,17 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class HelloController {
 
-    @RequestMapping(value= "goodbye")
-    @ResponseBody //just to return plaintext
-    public String goodbye(){
-        return "Goodbye";
-    }
+//    @RequestMapping(value= "goodbye")
+//    @ResponseBody //just to return plaintext
+//    public String goodbye(){
+//        return "Goodbye";
+//    }
 
+
+//    @RequestMapping(value ="")
+//    public String welcomePage(){
+//        return "form";
+//    }
 
     @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "hello")
     public String helloWithQueryParam(@RequestParam String name, Model model){
@@ -31,16 +36,8 @@ public class HelloController {
     //display the form
 
     @GetMapping("form")
-    @ResponseBody
     public String helloForm() {
-        return "<html>" +
-                "<body>" +
-                "<form method = 'get' action = '/hello'>" + //submits a request to /hello links to hellowithqueryparam
-                "<input type = 'text' name = 'name' />" +
-                "<input type = 'submit' value = 'Take me to the welcome page!' />" +
-                "</form>" +
-                "</body>" +
-                "</html>";
+        return "form";
     }
 
 
