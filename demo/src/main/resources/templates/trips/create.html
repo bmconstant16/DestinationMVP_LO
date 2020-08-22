@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Create Trip</title>
-</head>
+
+<head th:replace="fragments :: head"></head>
+
 <body>
 
-<h1 th:replace="fragments :: mainTitle"></h1>
+<!--<h1 th:replace="fragments :: mainTitle"></h1>-->
 
 <h2>Create Event</h2>
 
 <form method="post">
+    <div class="form-group">
+        <label>A simple title for your trip. e.g. Name or Country and Year (Italy 2020)
+            <input type="text" name="tripName">
+        </label>
+    </div>
 
-    <input type="text" name="tripName">
-    <input type="submit" value="Create Trip">
+    <div class="form-group">
+        <label>Trip Timeframe
+            <input type="date" name="dateTimeframe">
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>Who's going with you?
+            <input type="text" name="companions"
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>Description
+            <input type="text" name="description">
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>
+            <input type="url" name="url" id="url" placeholder="https://mygoogledoc.com">
+        </label>
+    </div>
+
+    <div>
+        <input type="submit" value="Create Trip">
+    </div>
 
 </form>
 

@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Destination Unknown</title>
-</head>
+
+<head th:replace="fragments :: head"></head>
+
 <body>
-    <h1 th:replace="fragments :: mainTitle"></h1>
-<!--    <h1>Destination Unknown</h1>-->
+
+    <div th:replace="fragments :: pageHeader"></div>
     <nav th:replace="fragments :: login"></nav>
+
     <p>This will be the welcome page. A header at the top will have a log in link.
     These links currently don't map to anything.</p>
-<!--    <p><a href>Login<a></a></p>-->
-<!--    <p><a href>Sign up<a href></p>-->
-
-<!--    <nav>-->
-<!--        <ul>-->
-<!--            <li><a href="/trips">My Trips</a></li>-->
-<!--            <li><a href="/trips/create">Create new trip</a></li>-->
-<!--        </ul>-->
-<!--    </nav>-->
 
     <nav th:replace="fragments :: navigation"></nav>
 
 
     <nav th:replace="fragments :: footer"></nav>
+
+<!--    <img th:src = "@{/images/mountainview.jpg}" width="700" height="400" alt="Mountain View"/>-->
 </body>
 </html>

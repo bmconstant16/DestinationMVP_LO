@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8"/>
-    <title>All Trips</title>
-</head>
+
+<head th:replace="fragments :: head"></head>
+<div th:replace="fragments :: pageHeader"></div>
+
 <body>
 
-<h1 th:replace="fragments :: mainTitle"></h1>
+<!--<h1 th:replace="fragments :: mainTitle"></h1>-->
 
 <h2>All Trips</h2>
 <p>Each trip will be hyperlinked and taken to an itinerary page. the path will be like trips/italy</p>
@@ -14,6 +14,18 @@
 
 
 
+<!--<table class="table">-->
+<!--    <thead>-->
+<!--        <tr>-->
+<!--            <th>Name</th>-->
+<!--        </tr>-->
+<!--    </thead>-->
+
+<!--    <tr th:each="trip : ${trips}">-->
+<!--        <td th:text="${trip}"></td>-->
+<!--    </tr>-->
+
+<!--</table>-->
 
 <ul>
     <th:block th:each="trip : ${trips}">

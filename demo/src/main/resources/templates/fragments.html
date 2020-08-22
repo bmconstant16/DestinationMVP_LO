@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
 <head th:fragment="head">
+<!--    <meta charset="UTF-8"/>-->
 
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
-    <link th:href="@{/css/techjobs.css}" rel="stylesheet" />
-    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
-
-    //title here
-    <title>Travel Planner</title>
+    <script th:src="@{/script.js}"></script>
+    <link th:href="@{/styles.css}" rel="stylesheet">
+<!--    <title>Destination Unknown: A Travel Planning Tool</title>-->
+<!--    <h3>Where will you go next?</h3>-->
 
 </head>
-
 <body>
+<div>
 
-<h1 th:fragment = "mainTitle">Destination Unknown: A Travel Planning Tool</h1>
+<div th:fragment = "pageHeader">
+    <h1>Destination Unknown: A Travel Planning Tool</h1>
+    <h3>Where will you go next?</h3>
+</div>
 
 <nav th:fragment="navigation">
     <ul>
@@ -33,7 +36,7 @@
 <nav th:fragment="footer">
     <p>Made by BC</p>
 </nav>
-
+</div>
 </body>
 
 
