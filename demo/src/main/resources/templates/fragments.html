@@ -2,21 +2,57 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
 <head th:fragment="head">
-<!--    <meta charset="UTF-8"/>-->
+    <meta charset="UTF-8"/>
+    <title>Destination Unknown</title>
 
-    <script th:src="@{/script.js}"></script>
-    <link th:href="@{/styles.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!--    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+
+<!--    <link rel="stylesheet" th:href="@{/styles.css}">-->
+
+<!--    <script th:src="@{/script.js}"></script>-->
+<!--    <link th:href="@{/styles.css}" rel="stylesheet">-->
 <!--    <title>Destination Unknown: A Travel Planning Tool</title>-->
 <!--    <h3>Where will you go next?</h3>-->
 
 </head>
-<body>
-<div>
 
-<div th:fragment = "pageHeader">
-    <h1>Destination Unknown: A Travel Planning Tool</h1>
-    <h3>Where will you go next?</h3>
+<body>
+
+<div th:fragment = "pageHeader" class="navbar navbar-expand-lg navbar-dark navbar-full bg-light">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/}">Destination Unknown</a>
+        </div>
+
+    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/}">Home<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/trips}">My Trips</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/trips/create}">Create a new trip</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Log in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sign up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
+
+
 
 <nav th:fragment="navigation">
     <ul>
@@ -36,7 +72,7 @@
 <nav th:fragment="footer">
     <p>Made by BC</p>
 </nav>
-</div>
+</nav>
 </body>
 
 
