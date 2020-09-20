@@ -12,10 +12,14 @@ public class Trip {
     private static int nextId = 1;
 
     private String name;
-    private String date;
+    private String startDate;
+    private String endDate;
     private String description;
     private String companions;
     private String url;
+
+    public Trip() {
+    }
 
     public Trip(String name, String description) {
         this.name = name;
@@ -24,9 +28,10 @@ public class Trip {
         nextId++;
     }
 
-    public Trip(String name, String date, String description, String companions, String url) {
+    public Trip(String name, String startDate, String endDate, String description, String companions, String url) {
         this.name = name;
-        this.date = date;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.description = description;
         this.companions= companions;
         this.url = url;
@@ -40,14 +45,21 @@ public class Trip {
         this.name = name;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public String getStartDate() {
+        return startDate;
     }
 
-    public String getDate() {
-        return date;
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
     }
 
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
 
     public String getDescription() {
         return description;

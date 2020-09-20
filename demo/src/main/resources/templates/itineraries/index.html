@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head th:replace="fragments :: pageHeader"></head>
+<head th:replace="fragments :: head"></head>
 
 <body>
+<div th:replace="fragments :: pageHeader"></div>
     <h1>Your Itinerary</h1>
     <p th:text="${itinerary}">Hello Itinerary</p>
 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 
-<head th:replace="fragments :: pageHeader"></head>
+<head th:replace="fragments :: head"></head>
 
 <body>
+<div th:replace="fragments :: pageHeader"></div>
 
-<!--<h1 th:replace="fragments :: mainTitle"></h1>-->
 
 <h2>All Trips</h2>
 <p>Each trip will be hyperlinked and taken to an itinerary page. the path will be like trips/italy</p>
@@ -25,19 +25,15 @@
 
     <tr th:each="trip :${trips}">
         <td th:text="${trip.id}"></td>
+        <td th:text="${trip.date}"></td>
         <td>
             <a th:href=@{'/itineraries/'} th:text="${trip.name}"></a>
         </td>
         <td th:text="${trip.description}"></td>
+        <td th:text="${trip.companions}"></td>
+        <td th:text="${trip.url}"></td>
     </tr>
 </table>
-
-<!--<ul>-->
-<!--    <li th:each="trip : ${trips}">-->
-<!--        <a th:href=@{'/itineraries/'} th:text="${trip.name}"></a>-->
-<!--    </li>-->
-
-<!--</ul>-->
 
 
 <p><a href="/trips/create">Create new trip here</a></p>
