@@ -4,39 +4,60 @@
 <head th:replace="fragments :: head"></head>
 
 <body>
+
 <div th:replace="fragments :: pageHeader"></div>
+
+<p th:text="${errorMsg}" style="color:red"></p>
 
 <h2>Create Event</h2>
 
 <form method="post">
     <div class="form-group">
-        <label>A simple title for your trip. e.g. Name or Country and Year (Italy 2020)
-            <input type="text" name="name">
+        <label>A simple name for your trip. e.g. Name or Country and Year (Italy 2020)
+            <input th:field="${trip.name}">
+<!--            <input type="text" name="name">-->
         </label>
+        <p class="alert alert-warning" th:errors="${trip.name}"></p>
     </div>
 
     <div class="form-group">
-        <label>Trip Timeframe
-            <input type="date" name="date">
+        <label>Trip Start
+            <input type="date" th:field="${trip.startDate}">
+<!--            <input type="date" name="startDate">-->
         </label>
+        <p class="alert alert-warning" th:errors="${trip.startDate}"></p>
+    </div>
+
+    <div class="form-group">
+        <label>Trip End
+            <input type="date" th:field="${trip.endDate}">
+<!--            <input type="date" name="endDate">-->
+        </label>
+        <p class="alert alert-warning" th:errors="${trip.endDate}"></p>
     </div>
 
     <div class="form-group">
         <label>Who's going with you?
-            <input type="text" name="companions">
+            <input type="text" th:field="${trip.companions}">
+<!--            <input type="text" name="companions">-->
         </label>
+        <p class="alert alert-warning" th:errors="${trip.companions}"></p>
     </div>
 
     <div class="form-group">
         <label>Description
-            <input type="text" name="description">
+            <input type="text" th:field="${trip.description}">
+<!--            <input type="text" name="description">-->
         </label>
+        <p class="alert alert-warning" th:errors="${trip.description}"></p>
     </div>
 
     <div class="form-group">
-        <label>
-            <input type="url" name="url" id="url" placeholder="https://mygoogledoc.com">
+        <label>URL
+            <input type = "url" th:field="${trip.startDate}" placeholder="https://mygoogledoc.com">
+<!--            <input type="url" name="url" id="url" placeholder="https://mygoogledoc.com">-->
         </label>
+        <p class="alert alert-warning" th:errors="${trip.url}"></p>
     </div>
 
     <div>

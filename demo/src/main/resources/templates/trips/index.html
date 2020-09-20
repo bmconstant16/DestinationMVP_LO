@@ -25,7 +25,8 @@
 
     <tr th:each="trip :${trips}">
         <td th:text="${trip.id}"></td>
-        <td th:text="${trip.date}"></td>
+        <td th:text="${trip.startDate}"></td>
+        <td th:text="${trip.endDate}"></td>
         <td>
             <a th:href=@{'/itineraries/'} th:text="${trip.name}"></a>
         </td>

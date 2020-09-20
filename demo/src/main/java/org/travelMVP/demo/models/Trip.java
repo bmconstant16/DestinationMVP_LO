@@ -1,6 +1,9 @@
 package org.travelMVP.demo.models;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Objects;
@@ -11,11 +14,21 @@ public class Trip {
     private int id;
     private static int nextId = 1;
 
+    @NotBlank(message = "Name is required.")
+    @Size(min=3, max=12)
     private String name;
+
+    @NotNull
     private String startDate;
+
+    @NotNull
     private String endDate;
+
+    @NotBlank(message = "A description must be entered.")
     private String description;
+
     private String companions;
+
     private String url;
 
     public Trip() {
