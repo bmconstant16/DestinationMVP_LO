@@ -9,10 +9,10 @@
 
 <p th:text="${errorMsg}" style="color:red"></p>
 
-<h2>Create Event</h2>
+<h2 class="d-flex justify-content-center">Create Event</h2>
 
 <form method="post">
-    <div class="form-group">
+    <div class="d-flex justify-content-center">
         <label>A simple name for your trip. e.g. Name or Country and Year (Italy 2020)
             <input th:field="${trip.name}">
 <!--            <input type="text" name="name">-->
@@ -20,7 +20,7 @@
         <p class="alert alert-warning" th:errors="${trip.name}"></p>
     </div>
 
-    <div class="form-group">
+    <div class="d-flex justify-content-center">
         <label>Trip Start
             <input type="date" th:field="${trip.startDate}">
 <!--            <input type="date" name="startDate">-->
@@ -28,7 +28,7 @@
         <p class="alert alert-warning" th:errors="${trip.startDate}"></p>
     </div>
 
-    <div class="form-group">
+    <div class="d-flex justify-content-center">
         <label>Trip End
             <input type="date" th:field="${trip.endDate}">
 <!--            <input type="date" name="endDate">-->
@@ -36,7 +36,7 @@
         <p class="alert alert-warning" th:errors="${trip.endDate}"></p>
     </div>
 
-    <div class="form-group">
+    <div class="d-flex justify-content-center">
         <label>Who's going with you?
             <input type="text" th:field="${trip.companions}">
 <!--            <input type="text" name="companions">-->
@@ -44,7 +44,7 @@
         <p class="alert alert-warning" th:errors="${trip.companions}"></p>
     </div>
 
-    <div class="form-group">
+    <div class="d-flex justify-content-center">
         <label>Description
             <input type="text" th:field="${trip.description}">
 <!--            <input type="text" name="description">-->
@@ -52,7 +52,7 @@
         <p class="alert alert-warning" th:errors="${trip.description}"></p>
     </div>
 
-    <div class="form-group">
+    <div class="d-flex justify-content-center">
         <label>URL
             <input type = "url" th:field="${trip.startDate}" placeholder="https://mygoogledoc.com">
 <!--            <input type="url" name="url" id="url" placeholder="https://mygoogledoc.com">-->
@@ -60,7 +60,7 @@
         <p class="alert alert-warning" th:errors="${trip.url}"></p>
     </div>
 
-    <div>
+    <div class="d-flex justify-content-center">
         <input type="submit" value="Create Trip" class="btn btn-success">
     </div>
 
