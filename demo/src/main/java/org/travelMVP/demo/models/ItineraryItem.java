@@ -161,4 +161,5 @@ public class ItineraryItem {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }
