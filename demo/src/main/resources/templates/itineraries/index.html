@@ -4,11 +4,48 @@
 <head th:replace="fragments :: head"></head>
 
 <body>
+
 <div th:replace="fragments :: pageHeader"></div>
-    <h1>Your Itinerary</h1>
-    <p th:text="${itinerary}">Hello Itinerary</p>
 
-    <p><a href="/itineraries/create">Add a new itinerary item</a></p>
 
+<p><a href="/itineraries/create">Add a new itinerary item</a></p>
+
+<h2>Itinerary</h2>
+<p>This page will show a table of the itinerary items</p>
+<p th:unless="${itineraryItems} and ${itineraryItems.size()}">You haven't yet entered any itinerary items!</p>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Start date</th>
+        <th>Start time</th>
+        <th>End date</th>
+        <th>End time</th>
+        <th>Type</th>
+        <th>Address</th>
+        <th>Coordinates</th>
+
+    </tr>
+    </thead>
+
+    <tr th:each="itineraryItem : ${itineraryItems}">
+        <td th:text="${itineraryItem.id}"></td>
+        <td th:text="${itineraryItem.name}"></td>
+        <td th:text="${itineraryItem.description}"></td>
+        <td th:text="${itineraryItem.startDate}"></td>
+        <td th:text="${itineraryItem.startTime}"></td>
+        <td th:text="${itineraryItem.endDate}"></td>
+        <td th:text="${itineraryItem.endTime}"></td>
+        <td th:text="${itineraryItem.type}"></td>
+        <td th:text="${itineraryItem.address}"></td>
+        <td th:text="${itineraryItem.coordinates}"></td>
+    </tr>
+</table>
+
+
+<p><a href="/itineraries/create">Create a new itinerary item.</a></p>
 </body>
 </html>

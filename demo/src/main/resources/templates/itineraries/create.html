@@ -6,17 +6,77 @@
 <body>
 <div th:replace="fragments :: pageHeader"></div>
 
+<!--<form method="post">-->
+<!--    <div class="form-group">-->
+<!--        <label>An itinerary item-->
+<!--            <input type="text" name="itinItem">-->
+<!--        </label>-->
+<!--    </div>-->
+
+<!--    <div>-->
+<!--        <input type="submit" value="Create Trip" class="btn btn-success">-->
+<!--    </div>-->
+<!--</form>-->
+
+<p th:text="${errorMsg}" style="color:red"></p>
+
+<h2 class="d-flex justify-content-center">Create Itinerary Item</h2>
+
 <form method="post">
-    <div class="form-group">
-        <label>An itinerary item
-            <input type="text" name="itinItem">
+    <div class="d-flex justify-content-center">
+        <label>Itinerary item name
+            <input th:field="${itineraryItem.name}">
+<!--                        <input type="text" name="name">-->
         </label>
+        <p class="alert alert-warning" th:errors="${itineraryItem.name}"></p>
     </div>
 
-    <div>
+    <div class="d-flex justify-content-center">
+        <label>Trip Start
+            <input type="date" th:field="${itineraryItem.startDate}">
+            <!--            <input type="date" name="startDate">-->
+        </label>
+<!--        <p class="alert alert-warning" th:errors="${itineraryItem.startDate}"></p>-->
+    </div>
+
+<!--    <div class="d-flex justify-content-center">-->
+<!--        <label>Trip End-->
+<!--            <input type="date" th:field="${trip.endDate}">-->
+<!--            &lt;!&ndash;            <input type="date" name="endDate">&ndash;&gt;-->
+<!--        </label>-->
+<!--        <p class="alert alert-warning" th:errors="${trip.endDate}"></p>-->
+<!--    </div>-->
+
+<!--    <div class="d-flex justify-content-center">-->
+<!--        <label>Who's going with you?-->
+<!--            <input type="text" th:field="${trip.companions}">-->
+<!--            &lt;!&ndash;            <input type="text" name="companions">&ndash;&gt;-->
+<!--        </label>-->
+<!--        <p class="alert alert-warning" th:errors="${trip.companions}"></p>-->
+<!--    </div>-->
+
+<!--    <div class="d-flex justify-content-center">-->
+<!--        <label>Description-->
+<!--            <input type="text" th:field="${trip.description}">-->
+<!--            &lt;!&ndash;            <input type="text" name="description">&ndash;&gt;-->
+<!--        </label>-->
+<!--        <p class="alert alert-warning" th:errors="${trip.description}"></p>-->
+<!--    </div>-->
+
+<!--    <div class="d-flex justify-content-center">-->
+<!--        <label>URL-->
+<!--            <input type = "url" th:field="${trip.startDate}" placeholder="https://mygoogledoc.com">-->
+<!--            &lt;!&ndash;            <input type="url" name="url" id="url" placeholder="https://mygoogledoc.com">&ndash;&gt;-->
+<!--        </label>-->
+<!--        <p class="alert alert-warning" th:errors="${trip.url}"></p>-->
+<!--    </div>-->
+
+    <div class="d-flex justify-content-center">
         <input type="submit" value="Create Trip" class="btn btn-success">
     </div>
+
 </form>
+
 
 </body>
 </html>

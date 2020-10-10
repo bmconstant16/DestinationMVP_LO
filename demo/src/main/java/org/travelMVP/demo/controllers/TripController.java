@@ -21,6 +21,7 @@ public class TripController {
 
     @GetMapping
     public String displayAllTrips(Model model){
+        model.addAttribute("title", "All Trips");
         model.addAttribute("trips", TripData.getAll());
         return "trips/index";
     }
@@ -30,7 +31,7 @@ public class TripController {
     //TODO: refactor so it takes string name and a date- is there a type for this?
     public String renderCreateTripForm(Model model){
         model.addAttribute("title", "Create Trip");
-        model.addAttribute((new Trip()));
+        model.addAttribute(new Trip());
         return "trips/create";
     }
 
