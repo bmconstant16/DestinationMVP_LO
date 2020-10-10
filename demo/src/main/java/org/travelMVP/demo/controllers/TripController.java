@@ -16,10 +16,7 @@ import java.util.List;
 @RequestMapping("trips")
 public class TripController {
 
-    //TODO: consider using a hashmap? each trip, should have an associated list of itin items
-//    private static List<Trip> trips = new ArrayList<>();
-
-    @GetMapping
+    @GetMapping("trips/")
     public String displayAllTrips(Model model){
         model.addAttribute("title", "All Trips");
         model.addAttribute("trips", TripData.getAll());
@@ -28,8 +25,7 @@ public class TripController {
 
     //get mapping handles routes to trips/create
     @GetMapping("create")
-    //TODO: refactor so it takes string name and a date- is there a type for this?
-    public String renderCreateTripForm(Model model){
+    public String displayCreateTripForm(Model model){
         model.addAttribute("title", "Create Trip");
         model.addAttribute(new Trip());
         return "trips/create";
