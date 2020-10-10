@@ -30,6 +30,8 @@ public class ItineraryItem {
     @NotNull
     private String type;
 
+    private String companions;
+
     @NotNull
     private String address;
 
@@ -49,7 +51,7 @@ public class ItineraryItem {
     }
 
     public ItineraryItem(String name, String description, String startDate, String startTime, String endDate, String endTime,
-                         String type, String address, String latitude, String longitude,
+                         String type, String companions, String address, String latitude, String longitude,
                          String coordinates) {
         this.name = name;
         this.description= description;
@@ -58,6 +60,7 @@ public class ItineraryItem {
         this.endDate = endDate;
         this.endTime = endTime;
         this.type = type;
+        this.companions = companions;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -110,6 +113,22 @@ public class ItineraryItem {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCompanions() {
+        return companions;
+    }
+
+    public void setCompanions(String companions) {
+        this.companions = companions;
     }
 
     public String getAddress() {

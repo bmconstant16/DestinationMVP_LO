@@ -10,7 +10,7 @@
 
 <p><a href="/itineraries/create">Add a new itinerary item</a></p>
 
-<h2>Itinerary</h2>
+<h3>Itinerary</h3>
 <p>This page will show a table of the itinerary items</p>
 <p th:unless="${itineraryItems} and ${itineraryItems.size()}">You haven't yet entered any itinerary items!</p>
 
@@ -25,23 +25,26 @@
         <th>End date</th>
         <th>End time</th>
         <th>Type</th>
+        <th>Companions</th>
         <th>Address</th>
-        <th>Coordinates</th>
-
+        <th>Latitude</th>
+        <th>Longitude</th>
     </tr>
     </thead>
 
-    <tr th:each="itineraryItem : ${itineraryItems}">
-        <td th:text="${itineraryItem.id}"></td>
-        <td th:text="${itineraryItem.name}"></td>
-        <td th:text="${itineraryItem.description}"></td>
-        <td th:text="${itineraryItem.startDate}"></td>
-        <td th:text="${itineraryItem.startTime}"></td>
-        <td th:text="${itineraryItem.endDate}"></td>
-        <td th:text="${itineraryItem.endTime}"></td>
-        <td th:text="${itineraryItem.type}"></td>
-        <td th:text="${itineraryItem.address}"></td>
-        <td th:text="${itineraryItem.coordinates}"></td>
+    <tr th:each="item : ${itineraryItems}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.description}"></td>
+        <td th:text="${item.startDate}"></td>
+        <td th:text="${item.startTime}"></td>
+        <td th:text="${item.endDate}"></td>
+        <td th:text="${item.endTime}"></td>
+        <td th:text="${item.type}"></td>
+        <td th:text="${item.companions}"></td>
+        <td th:text="${item.address}"></td>
+        <td th:text="${item.latitude}"></td>
+        <td th:text="${item.longitude}"></td>
     </tr>
 </table>
 
