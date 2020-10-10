@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head th:replace="fragments :: head"></head>
+
+<body>
+
+<div th:replace="fragments :: pageHeader"></div>
+
+<form method="post">
+
+    <th:block th:each="trip : ${trips}">
+        <div class="form-group">
+            <label>
+                <span th:text="${trip.name}"></span>
+                <input type="checkbox" name="tripIds" th:value="${trip.id}" class="form-control">
+            </label>
+        </div>
+    </th:block>
+
+    <input type="submit" value="Delete" class="btn btn-danger">
+</form>
+
+</body>
+</html>

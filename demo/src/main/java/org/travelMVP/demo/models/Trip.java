@@ -1,6 +1,8 @@
 package org.travelMVP.demo.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -8,14 +10,15 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Objects;
 
-//@Entity
+@Entity
 public class Trip {
 
+    @Id
+    @GeneratedValue
     private int id;
-    private static int nextId = 1;
 
     @NotBlank(message = "Name is required.")
-    @Size(min=3, max=12)
+    @Size(min=3, max=30)
     private String name;
 
     @NotNull
@@ -32,13 +35,6 @@ public class Trip {
     private String url;
 
     public Trip() {
-    }
-
-    public Trip(String name, String description) {
-        this.name = name;
-        this.description = description;
-        this.id= nextId;
-        nextId++;
     }
 
     public Trip(String name, String startDate, String endDate, String description, String companions, String url) {
