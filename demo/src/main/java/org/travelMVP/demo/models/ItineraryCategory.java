@@ -7,9 +7,6 @@ import javax.persistence.Id;
 @Entity
 public class ItineraryCategory extends AbstractEntity{
 
-//    @Id
-//    @GeneratedValue
-//    private int id;
 
     private String name;
 

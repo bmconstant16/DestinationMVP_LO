@@ -9,8 +9,6 @@ import java.util.Objects;
 @Entity
 public class ItineraryItem extends AbstractEntity {
 
-//    private int id;
-//    private static int nextId=1;
 
     @NotBlank(message="Name is required.")
     @Size(min=3, max=30)
@@ -47,12 +45,6 @@ public class ItineraryItem extends AbstractEntity {
     public ItineraryItem(){
     }
 
-//    public ItineraryItem(String name, String description){
-//        this.name=name;
-//        this.description= description;
-////        this.id=nextId;
-////        nextId++;
-//    }
 
     public ItineraryItem(String name, String description, String startDate, String startTime, String endDate, String endTime,
                          String type, String companions, String address, String latitude, String longitude,
@@ -172,17 +164,5 @@ public class ItineraryItem extends AbstractEntity {
         return name;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        ItineraryItem itineraryItem = (ItineraryItem) o;
-//        return id == itineraryItem.id;
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id);
-//    }
 
 }

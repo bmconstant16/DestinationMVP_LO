@@ -13,9 +13,6 @@ import java.util.Objects;
 @Entity
 public class Trip extends AbstractEntity {
 
-//    @Id
-//    @GeneratedValue
-//    private int id;
 
     @NotBlank(message = "Name is required.")
     @Size(min=3, max=30)
@@ -94,25 +91,10 @@ public class Trip extends AbstractEntity {
         this.url = url;
     }
 
-//    public int getId() {
-//        return id;
-//    }
 
     @Override
     public String toString() {
         return name;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Trip trip = (Trip) o;
-//        return id == trip.id;
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(id);
-//    }
 }
