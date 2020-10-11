@@ -1,13 +1,15 @@
 package org.travelMVP.demo.models;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
-public class ItineraryItem {
+@Entity
+public class ItineraryItem extends AbstractEntity {
 
-    private int id;
-    private static int nextId=1;
+//    private int id;
+//    private static int nextId=1;
 
     @NotBlank(message="Name is required.")
     private String name;
@@ -46,8 +48,8 @@ public class ItineraryItem {
     public ItineraryItem(String name, String description){
         this.name=name;
         this.description= description;
-        this.id=nextId;
-        nextId++;
+//        this.id=nextId;
+//        nextId++;
     }
 
     public ItineraryItem(String name, String description, String startDate, String startTime, String endDate, String endTime,
@@ -168,17 +170,17 @@ public class ItineraryItem {
         return name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ItineraryItem itineraryItem = (ItineraryItem) o;
-        return id == itineraryItem.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        ItineraryItem itineraryItem = (ItineraryItem) o;
+//        return id == itineraryItem.id;
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 
 }

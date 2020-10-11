@@ -1,12 +1,14 @@
 package org.travelMVP.demo.models;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-public class Companion {
+@Entity
+public class Companion extends AbstractEntity{
 
-    private int id;
-    private static int nextId=1;
+//    private int id;
+//    private static int nextId=1;
 
     @NotNull
     @NotBlank(message="You must enter a name.")
@@ -20,8 +22,8 @@ public class Companion {
     public Companion(String name, String relationship) {
         this.name = name;
         this.relationship = relationship;
-        this.id=nextId;
-        nextId++;
+//        this.id=nextId;
+//        nextId++;
     }
 
     public String getName() {
@@ -40,4 +42,8 @@ public class Companion {
         this.relationship = relationship;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }

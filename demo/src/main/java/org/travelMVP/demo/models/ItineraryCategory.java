@@ -5,19 +5,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class ItineraryCategory {
+public class ItineraryCategory extends AbstractEntity{
 
-    @Id
-    @GeneratedValue
-    private int id;
+//    @Id
+//    @GeneratedValue
+//    private int id;
 
     private String name;
 
     public ItineraryCategory(){;
     }
 
-    public ItineraryCategory(int id, String name) {
-        this.id = id;
+    public ItineraryCategory(String name) {
         this.name = name;
     }
 
@@ -28,4 +27,6 @@ public class ItineraryCategory {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }
