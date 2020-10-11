@@ -11,7 +11,7 @@ import org.travelMVP.demo.models.Trip;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("trips")
+@RequestMapping(value="trips")
 public class TripController {
 
     @Autowired
@@ -52,7 +52,7 @@ public class TripController {
     @GetMapping("delete")
     public String displayDeleteTripForm(Model model) {
         model.addAttribute("title", "Delete Trip");
-        model.addAttribute("events", tripRepository.findAll());
+        model.addAttribute("trips", tripRepository.findAll());
         return "trips/delete";
     }
 

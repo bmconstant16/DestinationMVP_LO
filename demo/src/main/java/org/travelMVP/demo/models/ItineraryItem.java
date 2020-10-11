@@ -3,6 +3,7 @@ package org.travelMVP.demo.models;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
@@ -12,9 +13,11 @@ public class ItineraryItem extends AbstractEntity {
 //    private static int nextId=1;
 
     @NotBlank(message="Name is required.")
+    @Size(min=3, max=30)
     private String name;
 
-    @NotBlank(message="Description is required")
+//    @NotBlank(message = "A description must be entered.")
+    //TODO: There's a weird error here that I can't figure out
     private String description;
 
     @NotNull
@@ -42,21 +45,20 @@ public class ItineraryItem extends AbstractEntity {
     private String coordinates;
 
     public ItineraryItem(){
-
     }
 
-    public ItineraryItem(String name, String description){
-        this.name=name;
-        this.description= description;
-//        this.id=nextId;
-//        nextId++;
-    }
+//    public ItineraryItem(String name, String description){
+//        this.name=name;
+//        this.description= description;
+////        this.id=nextId;
+////        nextId++;
+//    }
 
     public ItineraryItem(String name, String description, String startDate, String startTime, String endDate, String endTime,
                          String type, String companions, String address, String latitude, String longitude,
                          String coordinates) {
         this.name = name;
-        this.description= description;
+        this.description = description;
         this.startDate = startDate;
         this.startTime = startTime;
         this.endDate = endDate;

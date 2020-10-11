@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-public class Trip  extends AbstractEntity {
+public class Trip extends AbstractEntity {
 
 //    @Id
 //    @GeneratedValue
