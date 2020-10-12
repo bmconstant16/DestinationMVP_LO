@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.travelMVP.demo.data.ItineraryCategoryRepository;
 import org.travelMVP.demo.data.ItineraryItemRepository;
 import org.travelMVP.demo.models.ItineraryItem;
 
@@ -16,6 +17,9 @@ public class ItineraryItemController {
 
     @Autowired
     private ItineraryItemRepository itineraryItemRepository;
+
+    @Autowired
+    private ItineraryCategoryRepository itineraryCategoryRepository;
 
     //findall, save, findbyId, delete, count
 
@@ -32,6 +36,7 @@ public class ItineraryItemController {
     public String displayCreateItineraryItemForm(Model model){
         model.addAttribute("title", "Create Itinerary Item");
         model.addAttribute(new ItineraryItem());
+        model.addAttribute("categories", itineraryCategoryRepository.findAll());
         return "itineraries/create";
     }
 

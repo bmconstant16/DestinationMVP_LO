@@ -56,9 +56,15 @@
 
     <div class="d-flex justify-content-center">
         <label>Type
-            <input type="text" th:field="${itineraryItem.type}">
+        <select th:field="${itineraryItem.itineraryCategory}">
+            <option th:each="category : ${categories}"
+                    th:value="${itineraryCategory}"
+                    th:text="${itineraryCategory.name}"
+            ></option>
+<!--            <input type="text" th:field="${itineraryItem.type}">-->
+        </select>
         </label>
-        <p class="alert alert-warning" th:errors="${itineraryItem.type}"></p>
+        <p class="alert alert-warning" th:errors="${itineraryItem.itineraryCategory}"></p>
     </div>
 
     <div class="d-flex justify-content-center">

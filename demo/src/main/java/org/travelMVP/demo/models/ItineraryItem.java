@@ -1,6 +1,7 @@
 package org.travelMVP.demo.models;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -8,7 +9,6 @@ import java.util.Objects;
 
 @Entity
 public class ItineraryItem extends AbstractEntity {
-
 
     @NotBlank(message="Name is required.")
     @Size(min=3, max=30)
@@ -30,8 +30,8 @@ public class ItineraryItem extends AbstractEntity {
     @NotNull
     private String endTime;
 
-    @NotNull
-    private String type;
+//    @NotNull
+//    private String type;
 
     private String companions;
 
@@ -42,20 +42,24 @@ public class ItineraryItem extends AbstractEntity {
     private String longitude;
     private String coordinates;
 
+    @ManyToOne
+    @NotNull(message = "Type is required.")
+    private ItineraryCategory itineraryCategory;
+
     public ItineraryItem(){
     }
 
 
     public ItineraryItem(String name, String description, String startDate, String startTime, String endDate, String endTime,
-                         String type, String companions, String address, String latitude, String longitude,
-                         String coordinates) {
+                         String companions, String address, String latitude, String longitude,
+                         String coordinates, ItineraryCategory itineraryCategory) {
         this.name = name;
         this.description = description;
         this.startDate = startDate;
         this.startTime = startTime;
         this.endDate = endDate;
         this.endTime = endTime;
-        this.type = type;
+        this.itineraryCategory = itineraryCategory;
         this.companions = companions;
         this.address = address;
         this.latitude = latitude;
@@ -103,12 +107,12 @@ public class ItineraryItem extends AbstractEntity {
         this.endTime = endTime;
     }
 
-    public String getType() {
-        return type;
+    public ItineraryCategory getItineraryCategory() {
+        return itineraryCategory;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setItineraryCategory(ItineraryCategory itineraryCategory) {
+        this.itineraryCategory = itineraryCategory;
     }
 
     public String getDescription() {

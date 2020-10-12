@@ -25,5 +25,10 @@ public class ItineraryCategory extends AbstractEntity{
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
 
 }
