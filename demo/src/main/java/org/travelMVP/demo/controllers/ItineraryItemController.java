@@ -7,9 +7,11 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.travelMVP.demo.data.ItineraryCategoryRepository;
 import org.travelMVP.demo.data.ItineraryItemRepository;
+import org.travelMVP.demo.models.ItineraryCategory;
 import org.travelMVP.demo.models.ItineraryItem;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value="itineraries")
@@ -25,11 +27,25 @@ public class ItineraryItemController {
 
     //view all
     @GetMapping
-    public String displayAllItineraryItems(Model model){
-        model.addAttribute("title", "All Itinerary Items");
-        model.addAttribute("itineraryItems", itineraryItemRepository.findAll());
-        return "/itineraries/index";
+    public String displayAllItineraryItems(@RequestParam(required=false) Integer categoryId, Model model) {
+
+        if (categoryId == null) {
+            model.addAttribute("title", "All Itinerary Items");
+            model.addAttribute("itineraryItems", itineraryItemRepository.findAll());
+        } else {
+            Optional<ItineraryCategory> result = itineraryCategoryRepository.findById(categoryId);
+            if (result.isEmpty()) {
+                model.addAttribute("title", "Invalid Category" + categoryId);
+            } else {
+                ItineraryCategory category = result.get();
+                model.addAttribute("title", "Itinerary Items in Category: " + category.getName());
+                model.addAttribute("itineraryItems", category.getItineraryItems());
+            }
+        }
+
+        return "itineraries/index";
     }
+
 
     //get mapping handles routes to itineraries/create
     @GetMapping("create")
