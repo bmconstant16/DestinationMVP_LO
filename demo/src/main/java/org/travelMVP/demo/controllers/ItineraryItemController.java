@@ -7,6 +7,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.travelMVP.demo.data.ItineraryCategoryRepository;
 import org.travelMVP.demo.data.ItineraryItemRepository;
+import org.travelMVP.demo.data.TripRepository;
 import org.travelMVP.demo.models.ItineraryCategory;
 import org.travelMVP.demo.models.ItineraryItem;
 
@@ -22,6 +23,9 @@ public class ItineraryItemController {
 
     @Autowired
     private ItineraryCategoryRepository itineraryCategoryRepository;
+
+    @Autowired
+    private TripRepository tripRepository;
 
     //findall, save, findbyId, delete, count
 

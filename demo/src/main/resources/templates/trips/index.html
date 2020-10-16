@@ -28,6 +28,15 @@
         <td th:text="${trip.id}"></td>
         <td>
             <a th:href=@{'/itineraries/'} th:text="${trip.name}"></a>
+<!--    <tr>-->
+<!--        <th>Itinerary Category (or Type) Name</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tr th:each="category : ${categories}">-->
+<!--        &lt;!&ndash;    <td th:text="${category.name}"></td>&ndash;&gt;-->
+<!--        <td><a th:text="${category.name}" th:href="'/itineraries?categoryId=' + ${category.id}"></a></td>-->
+            <!--        <td><a th:text="${trip.name}" th:href="'/trips?tripId=' + ${trip.id}"></a></td>-->
+<!--    </tr>-->
         </td>
         <td th:text="${trip.startDate}"></td>
         <td th:text="${trip.endDate}"></td>
@@ -39,6 +48,8 @@
 
 
 <p><a href="/trips/create">Create new trip here</a></p>
+
+<p><a href="/trips/delete">Delete trips here</a></p>
 
 </body>
 </html>

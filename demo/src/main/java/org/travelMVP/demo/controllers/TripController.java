@@ -9,6 +9,7 @@ import org.travelMVP.demo.data.TripRepository;
 import org.travelMVP.demo.models.Trip;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value="trips")
@@ -47,6 +48,20 @@ public class TripController {
         tripRepository.save(newTrip);
         return "redirect:"; //redirect to root path for controller trips in this case
     }
+
+    //display by Trip
+//    @GetMapping("{tripId}")
+//    public String displayByTrip(Model model, @PathVariable int tripId) {
+//
+//        Optional optTrip = tripRepository.findById(tripId);
+//        if (optTrip.isPresent()) {
+//            Trip trip = (Trip) optTrip.get();
+//            model.addAttribute("trip", trip);
+//            return "index";
+//        } else {
+//            return "redirect:../";
+//        }
+//    }
 
     //trips delete displays the delete trip form
     @GetMapping("delete")

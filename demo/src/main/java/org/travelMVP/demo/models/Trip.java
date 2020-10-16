@@ -13,7 +13,6 @@ import java.util.Objects;
 @Entity
 public class Trip extends AbstractEntity {
 
-
     @NotBlank(message = "Name is required.")
     @Size(min=3, max=30)
     private String name;
@@ -30,6 +29,8 @@ public class Trip extends AbstractEntity {
     private String companions;
 
     private String url;
+
+//    private ItineraryItem itineraryItem;
 
     public Trip() {
     }

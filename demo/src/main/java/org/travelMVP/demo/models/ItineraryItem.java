@@ -14,8 +14,12 @@ public class ItineraryItem extends AbstractEntity {
     @Size(min=3, max=30)
     private String name;
 
+//    @ManyToOne
+//    @NotNull(message="An associated trip is required")
+//    private Trip trip;
+
 //    @NotBlank(message = "A description must be entered.")
-    //TODO: There's a weird error here that I can't figure out
+    //TODO: There's a weird error here that I can't figure out, won't show up in table.
     private String description;
 
     @NotNull
@@ -54,6 +58,7 @@ public class ItineraryItem extends AbstractEntity {
                          String companions, String address, String latitude, String longitude,
                          String coordinates, ItineraryCategory itineraryCategory) {
         this.name = name;
+//        this.trip= trip;
         this.description = description;
         this.startDate = startDate;
         this.startTime = startTime;
@@ -114,6 +119,15 @@ public class ItineraryItem extends AbstractEntity {
     public void setItineraryCategory(ItineraryCategory itineraryCategory) {
         this.itineraryCategory = itineraryCategory;
     }
+
+//    public Trip getTrip() {
+//        return trip;
+//    }
+
+    //TODO: may not need this and could refactor b/c trip is set by the form?
+//    public void setTrip(Trip trip) {
+//        this.trip = trip;
+//    }
 
     public String getDescription() {
         return description;
